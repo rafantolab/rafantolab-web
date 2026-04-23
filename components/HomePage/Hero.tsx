@@ -255,12 +255,14 @@ export default function Hero() {
                         gsap.to(p, {
                             y: `-=${20 + i * 8}`,
                             x: `+=${(i % 2 === 0 ? 1 : -1) * 12}`,
-                            opacity: [0.5, 1, 0.5],
                             duration: 3 + i * 0.7,
                             ease: "sine.inOut",
                             yoyo: true,
                             repeat: -1,
                             delay: i * 0.3,
+                            keyframes: {
+                                opacity: [0.5, 1, 0.5],
+                            },
                         });
                     });
             });
