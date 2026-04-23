@@ -57,6 +57,7 @@ export default function Navbar() {
             <Image 
             src={logo}
             width={180}
+            alt="RafantoLab Logo"
             />
           </div>
 
