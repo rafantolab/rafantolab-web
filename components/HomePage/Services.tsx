@@ -36,7 +36,7 @@ const SERVICES = [
     {
         icon: "✦",
         title: "UI/UX Design",
-        desc: "Research-backed interfaces that delight users and drive conversions — from wireframe to launch.",
+        desc: "Research-backed interfaces that delight users and drive conversions from wireframe to launch.",
     },
     {
         icon: "📈",

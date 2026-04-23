@@ -89,10 +89,6 @@ export default function Navbar() {
       <div className={`fixed inset-0 z-[490] md:hidden transition-all duration-300 ${mobileOpen?"opacity-100 pointer-events-auto":"opacity-0 pointer-events-none"}`}>
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={()=>setMobileOpen(false)}/>
         <div className={`absolute top-0 right-0 h-full w-72 bg-white/5 backdrop-blur-2xl border-l border-white/10 flex flex-col pt-20 px-7 gap-1 transition-transform duration-300 ${mobileOpen?"translate-x-0":"translate-x-full"}`}>
-          <div className="flex items-center gap-2.5 mb-8">
-            <svg width="22" height="22" viewBox="0 0 512 512" fill="none"><defs><linearGradient id="mGrad" x1="0" y1="512" x2="512" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#198405"/><stop offset="1" stopColor="#52f317"/></linearGradient></defs><path fill="url(#mGrad)" d="M256,102.1c84.9,0,154,69.11,154,154s-69.11,154-154,154-154-69.11-154-154,69.11-154,154-154M256,0C114.57,0,0,114.68,0,256s114.68,256,256,256,256-114.68,256-256S397.32,0,256,0h0Z"/></svg>
-            <span className="font-bold text-white text-[1rem]">Rafanto<span className="text-green">lab</span></span>
-          </div>
           {navLinks.map(({label, href})=>(
             <button key={label} onClick={()=>go(href)} className="text-left text-[1rem] font-semibold text-white/80 py-3.5 border-b border-white/10 bg-transparent border-l-0 border-r-0 border-t-0 cursor-pointer hover:text-green transition-colors duration-200">{label}</button>
           ))}

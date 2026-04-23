@@ -1,6 +1,9 @@
 "use client"
 
+import Image, { StaticImageData } from "next/image";
 import { Label, SectionTitle, useStagger } from "../Sections";
+import coo from "../../images/COO.png";
+import ceo from "../../images/CEO.png";
 
 // Deterministic SVG avatar using initials + unique abstract pattern
 function FounderPhoto({
@@ -9,7 +12,7 @@ function FounderPhoto({
     hue,
 }: {
     name: string;
-    initials: string;
+    initials: string | any;
     hue: number;
 }) {
     const id = initials.toLowerCase();
@@ -161,30 +164,32 @@ function FounderPhoto({
 
 const FOUNDERS = [
     {
-        name: "Rafsan Ahmed",
+        name: "Rafiul Islam Refat",
         role: "CEO & Co-Founder",
-        initials: "RA",
+        initials: "RIR",
         hue: 130,
+        image: ceo as StaticImageData,
         linkedin: "https://linkedin.com/in/",
     },
     {
-        name: "Nadia Islam",
-        role: "CTO & Co-Founder",
-        initials: "NI",
+        name: "Nahiduzzaman Raz",
+        role: "COO & Co-Founder",
+        initials: "NR",
         hue: 215,
+        image: coo as StaticImageData,
         linkedin: "https://linkedin.com/in/",
     },
     {
-        name: "Tanjim Hossain",
-        role: "Creative Director & Co-Founder",
-        initials: "TH",
+        name: "Abdullah Al Galib",
+        role: "CTO & Co-Founder",
+        initials: "AAG",
         hue: 270,
         linkedin: "https://linkedin.com/in/",
     },
     {
-        name: "Meherun Akter",
-        role: "Head of Growth & Co-Founder",
-        initials: "MA",
+        name: "Shahidul Islam Shanto",
+        role: "CFO & Co-Founder",
+        initials: "SIS",
         hue: 35,
         linkedin: "https://linkedin.com/in/",
     },
@@ -221,12 +226,22 @@ export function Founders() {
                             className="stag group relative bg-bg3 border border-gray2 rounded-2xl overflow-hidden hover:border-green/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
                         >
                             {/* Photo area */}
-                            <div className="w-full h-[240px] overflow-hidden relative">
-                                <FounderPhoto
-                                    name={f.name}
-                                    initials={f.initials}
-                                    hue={f.hue}
-                                />
+                            <div className="w-full h-[440px] overflow-hidden relative">
+                                {f.image ? (
+                                    <Image
+                                        src={f.image}
+                                        alt={f.name}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                                    />
+                                ) : (
+                                    <FounderPhoto
+                                        name={f.name}
+                                        initials={f.initials}
+                                        hue={f.hue}
+                                    />
+                                )}
                                 {/* Bottom gradient fade */}
                                 <div
                                     className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
