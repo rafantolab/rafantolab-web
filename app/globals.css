@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap');
+
+:root {
+  --font-redhat:   'Red Hat Display', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --green: #52f317;
+  --container: 70%;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #050505;
+  color: #f5f5f5;
+  font-family: var(--font-redhat);
+  overflow-x: hidden;
+}
+
+/* ── Noise grain overlay ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9998; opacity: .6;
+}
+
+/* ── Container ── */
+.container-site {
+  width: var(--container);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 1200px) { .container-site { width: 82%; } }
+@media (max-width: 900px)  { .container-site { width: 90%; } }
+@media (max-width: 640px)  { .container-site { width: 94%; } }
+
+/* ── Nav link underline hover ── */
+.nav-link-hover {
+  position: relative;
+}
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 1px;
+  background: #52f317;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link-hover:hover::after { transform: scaleX(1); }
+
+/* ── Service card inner glow ── */
+.svc-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(circle at 65% 25%, rgba(82,243,23,0.09), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+.svc-card:hover::after { opacity: 1; }
+
+/* ── Rolling text animation ── */
+.rolling-wrapper {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.rolling-word {
+  display: block;
+  animation: rollIn 0.55s cubic-bezier(0.22,1,0.36,1) both;
+}
+@keyframes rollIn {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── Logo SVG paths ── */
+.logo-svg path { fill: url(#logoGrad); }
+
+/* ── Dot grid inside orb ── */
+.dot-grid {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(82,243,23,0.18) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 50%;
+  opacity: .12;
+  pointer-events: none;
+}
+
+/* ── Custom select arrow ── */
+.sel-arrow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* ── Tech card glow ── */
+.tech-card:hover {
+  border-color: rgba(82,243,23,0.35) !important;
+  box-shadow: 0 0 28px rgba(82,243,23,0.1);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #52f317; }
+
+/* ── White section overrides ── */
+section.bg-white ::-webkit-scrollbar-track { background: #fff; }
