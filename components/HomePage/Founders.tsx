@@ -204,7 +204,7 @@ export function Founders() {
     return (
         <section
             id="founders"
-            className="py-[100px] bg-bg2"
+            className="md:py-[100px]"
         >
             <div className="container-site">
                 <div className="text-center mb-14">

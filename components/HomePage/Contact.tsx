@@ -147,7 +147,7 @@ export function Contact() {
     return (
         <section
             id="contact"
-            className="py-[100px] bg-bg2 relative overflow-hidden"
+            className="md:py-[100px] relative overflow-hidden"
         >
             <div
                 className="absolute inset-0 pointer-events-none"

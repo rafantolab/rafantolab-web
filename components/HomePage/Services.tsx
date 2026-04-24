@@ -61,7 +61,7 @@ export function Services() {
     return (
         <section
             id="services"
-            className="py-[100px] bg-bg"
+            className="md:py-[100px] bg-bg"
         >
             <div className="container-site">
                 <div className="flex justify-between items-center mb-12 flex-wrap gap-5">

@@ -363,7 +363,7 @@ export default function Hero() {
                     >
                         {" "}
                         <p className="relative w-full text-center mb-5">
-                            <p className="text-5xl text-center rolling-wrapper text-green  italic">
+                            <p className="text-5xl leading-relaxed text-center rolling-wrapper text-green italic">
                                 <p
                                     key={animKey}
                                     className="rolling-word font-bold"

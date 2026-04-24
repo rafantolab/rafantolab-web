@@ -91,31 +91,28 @@ const socials = [
 
 export function Footer() {
     return (
-        <footer
-              className="relative overflow-hidden pt-20 pb-8 sm:pt-24 "
-        >
+        <footer className="relative overflow-hidden md:pt-20 pb-8">
             <div className="pointer-events-none absolute inset-0">
-  {/* Base smooth vertical blend */}
-  <div className="absolute inset-0 bg-[linear-gradient(180deg,#0a070c_0%,#0a070c_40%,rgba(82,243,23,0.08)_75%,rgba(82,243,23,0.18)_100%)]" />
-  
-  {/* Soft green glow from bottom */}
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(82,243,23,0.18),transparent_65%)]" />
-</div>
+                {/* Base smooth vertical blend */}
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,#0a070c_0%,#0a070c_40%,rgba(82,243,23,0.08)_75%,rgba(82,243,23,0.18)_100%)]" />
+
+                {/* Soft green glow from bottom */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(82,243,23,0.18),transparent_65%)]" />
+            </div>
             <div className="container-site relative z-10">
                 <div
                     className="rounded-[30px] border border-white/10 
-bg-[linear-gradient(180deg,
-  rgba(20,30,15,0.7)_0%,
-  rgba(15,25,12,0.82)_40%,
-  rgba(10,15,10,0.92)_75%,
-  rgba(8,10,8,0.96)_100%
-)]
-backdrop-blur-xl
-px-12 py-9 shadow-lg shadow-[#102c06]"
-                >
+                                bg-[linear-gradient(180deg,
+                                rgba(20,30,15,0.7)_0%,
+                                rgba(15,25,12,0.82)_40%,
+                                rgba(10,15,10,0.92)_75%,
+                                rgba(8,10,8,0.96)_100%
+                                )]
+                                backdrop-blur-xl
+                                px-12 py-9 shadow-lg shadow-[#102c06]"
+                    >
                     <div
-                        className="absolute inset-0 rounded-[30px] pointer-events-none 
-bg-[radial-gradient(circle_at_top,rgba(82,243,23,0.08),transparent_60%)]"
+                        className="absolute inset-0 rounded-[30px] pointer-events-none bg-[radial-gradient(circle_at_top,rgba(82,243,23,0.08),transparent_60%)]"
                     />
                     <div className="grid gap-12 lg:grid-cols-[1.3fr_2fr] lg:gap-16">
                         <div>
@@ -163,7 +160,11 @@ bg-[radial-gradient(circle_at_top,rgba(82,243,23,0.08),transparent_60%)]"
                                     Rafanto
                                     <span className="text-green">lab</span>
                                 </span> */}
-                                <Image src={logo2} width={350} alt="RafantoLab Logo"/>
+                                <Image
+                                    src={logo2}
+                                    width={350}
+                                    alt="RafantoLab Logo"
+                                />
                             </button>
 
                             {/* <p className="mt-3 max-w-[320px] text-[0.92rem] leading-[1.75] text-white/62">
@@ -236,7 +237,7 @@ bg-[radial-gradient(circle_at_top,rgba(82,243,23,0.08),transparent_60%)]"
                         </div>
                     </div>
 
-                    <div className="mt-8 border-t border-white/10 pt-5 text-[0.82rem] text-white/46 sm:flex sm:items-center sm:justify-between">
+                    <div className="mt-8 border-t border-white/10 pt-5 text-[0.82rem] text-white/46 flex flex-col md:flex-row justify-between items-center">
                         <p>© 2026 Rafantolab. All rights reserved.</p>
                         <p className="mt-2 sm:mt-0">
                             Intelligence Behind Innovation

@@ -29,14 +29,14 @@ const config: Config = {
           "0%,100%": { opacity: "1",  transform: "scale(1)" },
           "50%":     { opacity: ".5", transform: "scale(.8)" },
         },
-        marqueeL: {
+        marquee: {
           from: { transform: "translateX(0)" },
           to:   { transform: "translateX(-50%)" },
         },
-        marqueeR: {
-          from: { transform: "translateX(-50%)" },
-          to:   { transform: "translateX(0)" },
-        },
+        // marqueeR: {
+        //   from: { transform: "translateX(-50%)" },
+        //   to:   { transform: "translateX(0)" },
+        // },
         spinSlow:  { from:{ transform:"rotate(0deg)"   }, to:{ transform:"rotate(360deg)"  } },
         spinSlowR: { from:{ transform:"rotate(0deg)"   }, to:{ transform:"rotate(-360deg)" } },
         floatY:    { "0%,100%":{ transform:"translateY(0px)"  }, "50%":{ transform:"translateY(-14px)" } },
@@ -47,8 +47,8 @@ const config: Config = {
       },
       animation: {
         badgePulse: "badgePulse 2s ease-in-out infinite",
-        marqueeL:   "marqueeL 32s linear infinite",
-        marqueeR:   "marqueeR 28s linear infinite",
+        marquee:   "marquee 15s linear infinite",
+        // marqueeR:   "marqueeR 28s linear infinite",
         spinSlow:   "spinSlow 22s linear infinite",
         spinSlowR:  "spinSlowR 32s linear infinite",
         floatY:     "floatY 4s ease-in-out infinite",

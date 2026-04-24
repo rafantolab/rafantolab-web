@@ -16,7 +16,7 @@ const mItems = [
 export function Marquee() {
     return (
         <div className="bg-bg3 font-display italic border-t border-b border-gray2 overflow-hidden py-[11px]">
-            <div className="flex gap-10 animate-marqueeL w-max">
+            <div className="flex gap-10 animate-marquee w-max">
                 {[...mItems, ...mItems, ...mItems].map((t, i) => (
                     <div
                         key={i}

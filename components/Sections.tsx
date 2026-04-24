@@ -1,6 +1,20 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { toast } from "sonner";
+import logo1 from "../images/brand/logo1.png";
+import logo2 from "../images/brand/logo2.png";
+import logo3 from "../images/brand/logo3.png";
+import logo4 from "../images/brand/logo4.png";
+import logo5 from "../images/brand/logo5.png";
+import logo6 from "../images/brand/logo6.png";
+import logo7 from "../images/brand/logo7.png";
+import logo8 from "../images/brand/logo8.png";
+import logo9 from "../images/brand/logo9.png";
+import logo10 from "../images/brand/logo10.png";
+import logo11 from "../images/brand/logo11.png";
+import logo12 from "../images/brand/logo12.png";
+import logo13 from "../images/brand/logo13.png";
+import logo14 from "../images/brand/logo14.png";
+import Image from "next/image";
 
 /* ══════════════════════════════════════
    SHARED HOOKS
@@ -70,21 +84,20 @@ export function useStagger(gridSel: string) {
 }
 
 const TRUSTED = [
-    { name: "Stripe", symbol: "$", color: "#635BFF" },
-    { name: "Vercel", symbol: "▲", color: "#ffffff" },
-    { name: "Linear", symbol: "L", color: "#5E6AD2" },
-    { name: "Notion", symbol: "N", color: "#ffffff" },
-    { name: "Figma", symbol: "✦", color: "#F24E1E" },
-    { name: "Shopify", symbol: "S", color: "#96BF48" },
-    { name: "Framer", symbol: "F", color: "#BB4B96" },
-    { name: "Intercom", symbol: "i", color: "#2C6ECB" },
-    { name: "Webflow", symbol: "W", color: "#4353FF" },
-    { name: "Supabase", symbol: "⚡", color: "#3ECF8E" },
-    { name: "Intercom", symbol: "i", color: "#2C6ECB" },
-    { name: "Supabase", symbol: "⚡", color: "#3ECF8E" },
-    { name: "PlanetScale", symbol: "P", color: "#F87171" },
-    { name: "Loom", symbol: "●", color: "#625DF5" },
-    { name: "Framer", symbol: "F", color: "#BB4B96" },
+    { name: "", symbol: logo1, color: "#fff" },
+    { name: "", symbol: logo2, color: "#fff" },
+    { name: "", symbol: logo3, color: "#fff" },
+    { name: "", symbol: logo4, color: "#fff" },
+    { name: "", symbol: logo5, color: "#fff" },
+    { name: "", symbol: logo6, color: "#fff" },
+    { name: "", symbol: logo7, color: "#fff" },
+    { name: "", symbol: logo8, color: "#fff" },
+    { name: "", symbol: logo9, color: "#fff" },
+    { name: "", symbol: logo10, color: "#fff" },
+    { name: "", symbol: logo11, color: "#fff" },
+    { name: "", symbol: logo12, color: "#fff" },
+    { name: "", symbol: logo13, color: "#fff" },
+    { name: "", symbol: logo14, color: "#fff" },
 ];
 
 export function SectionTitle({
@@ -255,375 +268,6 @@ export function useDragCarousel(
 }
 
 /* ══════════════════════════════════════
-   CONTACT
-══════════════════════════════════════ */
-// export function Contact() {
-//     useFade(".ctc-fade");
-//     const [form, setForm] = useState({
-//         fname: "",
-//         femail: "",
-//         fphone: "",
-//         fservice: "",
-//         fpricing: "",
-//         fmsg: "",
-//     });
-//     const [errs, setErrs] = useState<Record<string, boolean>>({});
-//     const [done, setDone] = useState(false);
-//     const [isSubmitting, setIsSubmitting] = useState(false);
-//     const formRef = useRef<HTMLDivElement>(null);
-//     const okRef = useRef<HTMLDivElement>(null);
-//     const ch = (
-//         e: React.ChangeEvent<
-//             HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-//         >,
-//     ) => {
-//         setForm((f) => ({ ...f, [e.target.id]: e.target.value }));
-//         setErrs((er) => ({ ...er, [e.target.id]: false }));
-//     };
-//     const submit = async () => {
-//         if (isSubmitting) return;
-//         const req = [
-//             "fname",
-//             "femail",
-//             "fservice",
-//             "fpricing",
-//             "fmsg",
-//         ] as const;
-//         const ne: Record<string, boolean> = {};
-//         req.forEach((k) => {
-//             if (!form[k]) ne[k] = true;
-//         });
-//         if (Object.keys(ne).length) {
-//             setErrs(ne);
-//             toast.error("Please fill in all required fields.");
-//             return;
-//         }
-//         setIsSubmitting(true);
-//         try {
-//             const payload = {
-//                 name: form.fname,
-//                 fullName: form.fname,
-//                 email: form.femail,
-//                 phone: form.fphone,
-//                 service: form.fservice,
-//                 budget: form.fpricing,
-//                 pricing: form.fpricing,
-//                 message: form.fmsg,
-//                 fname: form.fname,
-//                 femail: form.femail,
-//                 fphone: form.fphone,
-//                 fservice: form.fservice,
-//                 fpricing: form.fpricing,
-//                 fmsg: form.fmsg,
-//             };
-
-//             const res = await fetch(
-//                 "https://rafantolab-backend.onrender.com/api/v1/contact",
-//                 {
-//                     method: "POST",
-//                     headers: {
-//                         "Content-Type": "application/json",
-//                     },
-//                     body: JSON.stringify(payload),
-//                 },
-//             );
-
-//             if (!res.ok) {
-//                 let message = "Failed to submit the form. Please try again.";
-//                 try {
-//                     const data = await res.json();
-//                     if (typeof data?.message === "string") {
-//                         message = data.message;
-//                     }
-//                 } catch {}
-//                 throw new Error(message);
-//             }
-
-//             toast.success("Message submitted successfully.");
-
-//             const { gsap } = await import("gsap");
-//             gsap.to(formRef.current, {
-//                 opacity: 0,
-//                 y: -16,
-//                 duration: 0.3,
-//                 ease: "power2.in",
-//                 onComplete() {
-//                     setDone(true);
-//                     setForm({
-//                         fname: "",
-//                         femail: "",
-//                         fphone: "",
-//                         fservice: "",
-//                         fpricing: "",
-//                         fmsg: "",
-//                     });
-//                     if (okRef.current)
-//                         gsap.fromTo(
-//                             okRef.current,
-//                             { opacity: 0, scale: 0.88 },
-//                             {
-//                                 opacity: 1,
-//                                 scale: 1,
-//                                 duration: 0.5,
-//                                 ease: "back.out(1.4)",
-//                             },
-//                         );
-//                 },
-//             });
-//         } catch (error) {
-//             const message =
-//                 error instanceof Error
-//                     ? error.message
-//                     : "Failed to submit the form. Please try again.";
-//             toast.error(message);
-//         } finally {
-//             setIsSubmitting(false);
-//         }
-//     };
-//     const ic = (id: string) =>
-//         `w-full bg-bg2 border rounded-[10px] px-4 py-3 font-body text-[0.93rem] text-white outline-none transition-all duration-200 placeholder:text-gray/50 focus:border-green focus:shadow-[0_0_0_3px_rgba(82,243,23,0.1)] ${errs[id] ? "border-red-500" : "border-gray2"}`;
-//     return (
-//         <section
-//             id="contact"
-//             className="py-[100px] bg-bg2 relative overflow-hidden"
-//         >
-//             <div
-//                 className="absolute inset-0 pointer-events-none"
-//                 style={{
-//                     background:
-//                         "radial-gradient(ellipse 70% 55% at 50% 50%,rgba(82,243,23,0.04) 0%,transparent 70%)",
-//                 }}
-//             />
-//             <div className="container-site relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1.55fr] gap-16 items-start">
-//                 <div>
-//                     <Label>Get In Touch</Label>
-//                     <SectionTitle
-//                         pre="Let's build your"
-//                         roll="next big thing"
-//                     />
-//                     <p className="ctc-fade text-gray text-[1rem] leading-[1.78] mb-8">
-//                         Tell us about your project. We respond within 24 hours
-//                         for a free discovery call.
-//                     </p>
-//                     <div className="ctc-fade flex flex-col gap-3.5">
-//                         {[
-//                             { i: "✉", t: "hello@rafantolab.com" },
-//                             { i: "📞", t: "+1 (555) 000-0000" },
-//                             { i: "📍", t: "Remote-first · Global Delivery" },
-//                             { i: "⏰", t: "Response within 24 hours" },
-//                         ].map(({ i, t }) => (
-//                             <div
-//                                 key={t}
-//                                 className="flex items-center gap-3 text-[0.9rem] text-white/65"
-//                             >
-//                                 <div className="w-9 h-9 rounded-[9px] bg-green/10 border border-green/15 flex items-center justify-center text-[1rem] flex-shrink-0">
-//                                     {i}
-//                                 </div>
-//                                 {t}
-//                             </div>
-//                         ))}
-//                     </div>
-//                     <div className="ctc-fade mt-8 bg-green/5 border border-green/20 rounded-xl p-4 flex items-start gap-3">
-//                         <span className="text-[1.5rem]">🌳</span>
-//                         <div>
-//                             <p className="text-green font-semibold text-[0.85rem] mb-1">
-//                                 Your confirmation plants a tree
-//                             </p>
-//                             <p className="text-gray text-[0.8rem] leading-[1.5]">
-//                                 When you confirm your project with us,
-//                                 Rafantolab plants 1 tree on your behalf. 450
-//                                 trees planted so far.
-//                             </p>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <div className="ctc-fade bg-bg3 border border-gray2 rounded-[18px] p-9">
-//                     {!done ? (
-//                         <div ref={formRef}>
-//                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-//                                 <div className="flex flex-col gap-1.5">
-//                                     <label
-//                                         htmlFor="fname"
-//                                         className="text-[0.72rem] font-semibold tracking-[0.08em] text-gray uppercase"
-//                                     >
-//                                         Full Name *
-//                                     </label>
-//                                     <input
-//                                         id="fname"
-//                                         type="text"
-//                                         placeholder="Jane Smith"
-//                                         value={form.fname}
-//                                         onChange={ch}
-//                                         className={ic("fname")}
-//                                     />
-//                                 </div>
-//                                 <div className="flex flex-col gap-1.5">
-//                                     <label
-//                                         htmlFor="femail"
-//                                         className="text-[0.72rem] font-semibold tracking-[0.08em] text-gray uppercase"
-//                                     >
-//                                         Email *
-//                                     </label>
-//                                     <input
-//                                         id="femail"
-//                                         type="email"
-//                                         placeholder="jane@company.com"
-//                                         value={form.femail}
-//                                         onChange={ch}
-//                                         className={ic("femail")}
-//                                     />
-//                                 </div>
-//                             </div>
-//                             <div className="flex flex-col gap-1.5 mb-4">
-//                                 <label
-//                                     htmlFor="fphone"
-//                                     className="text-[0.72rem] font-semibold tracking-[0.08em] text-gray uppercase"
-//                                 >
-//                                     Phone / WhatsApp
-//                                 </label>
-//                                 <input
-//                                     id="fphone"
-//                                     type="tel"
-//                                     placeholder="+1 (555) 000-0000"
-//                                     value={form.fphone}
-//                                     onChange={ch}
-//                                     className={ic("fphone")}
-//                                 />
-//                             </div>
-//                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-//                                 <div className="flex flex-col gap-1.5">
-//                                     <label
-//                                         htmlFor="fservice"
-//                                         className="text-[0.72rem] font-semibold tracking-[0.08em] text-gray uppercase"
-//                                     >
-//                                         Service *
-//                                     </label>
-//                                     <select
-//                                         id="fservice"
-//                                         value={form.fservice}
-//                                         onChange={ch}
-//                                         className={`${ic("fservice")} sel-arrow`}
-//                                     >
-//                                         <option
-//                                             value=""
-//                                             disabled
-//                                         >
-//                                             Select a service…
-//                                         </option>
-//                                         {[
-//                                             "SaaS Product",
-//                                             "Custom Landing Page",
-//                                             "Web Application",
-//                                             "CMS Development",
-//                                             "Mobile App Development",
-//                                             "Branding & Identity",
-//                                             "UI/UX Design",
-//                                             "Digital Marketing",
-//                                             "AI / ML Integration",
-//                                             "Video Editing",
-//                                             "Other",
-//                                         ].map((o) => (
-//                                             <option key={o}>{o}</option>
-//                                         ))}
-//                                     </select>
-//                                 </div>
-//                                 <div className="flex flex-col gap-1.5">
-//                                     <label
-//                                         htmlFor="fpricing"
-//                                         className="text-[0.72rem] font-semibold tracking-[0.08em] text-gray uppercase"
-//                                     >
-//                                         Budget / Plan *
-//                                     </label>
-//                                     <select
-//                                         id="fpricing"
-//                                         value={form.fpricing}
-//                                         onChange={ch}
-//                                         className={`${ic("fpricing")} sel-arrow`}
-//                                     >
-//                                         <option
-//                                             value=""
-//                                             disabled
-//                                         >
-//                                             Select a plan…
-//                                         </option>
-//                                         {[
-//                                             "Starter — $4,800/mo",
-//                                             "Growth — $9,500/mo",
-//                                             "Enterprise — Custom",
-//                                             "One-time Project",
-//                                             "Not Sure Yet",
-//                                         ].map((o) => (
-//                                             <option key={o}>{o}</option>
-//                                         ))}
-//                                     </select>
-//                                 </div>
-//                             </div>
-//                             <div className="flex flex-col gap-1.5 mb-6">
-//                                 <label
-//                                     htmlFor="fmsg"
-//                                     className="text-[0.72rem] font-semibold tracking-[0.08em] text-gray uppercase"
-//                                 >
-//                                     Project Details *
-//                                 </label>
-//                                 <textarea
-//                                     id="fmsg"
-//                                     rows={4}
-//                                     placeholder="Describe your idea, goals, and timeline…"
-//                                     value={form.fmsg}
-//                                     onChange={ch}
-//                                     className={`${ic("fmsg")} resize-y min-h-[120px] leading-[1.65]`}
-//                                 />
-//                             </div>
-//                             <div className="flex items-center justify-between flex-wrap gap-4">
-//                                 <p className="text-[0.75rem] text-gray leading-[1.5]">
-//                                     🔒 Secure & confidential.
-//                                 </p>
-//                                 <button
-//                                     onClick={submit}
-//                                     disabled={isSubmitting}
-//                                     className="bg-green text-[#050505] rounded-full px-8 py-3.5 text-[0.95rem] font-bold flex items-center gap-2 border-0 cursor-pointer hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(82,243,23,0.35)] transition-all duration-200"
-//                                 >
-//                                     {isSubmitting ? "Sending..." : "Send Message"}
-//                                     {!isSubmitting ? (
-//                                         <svg
-//                                             width="15"
-//                                             height="15"
-//                                             fill="none"
-//                                             stroke="currentColor"
-//                                             strokeWidth="2.5"
-//                                             viewBox="0 0 24 24"
-//                                         >
-//                                             <path d="M5 12h14M12 5l7 7-7 7" />
-//                                         </svg>
-//                                     ) : null}
-//                                 </button>
-//                             </div>
-//                         </div>
-//                     ) : (
-//                         <div
-//                             ref={okRef}
-//                             className="text-center py-12"
-//                         >
-//                             <div className="text-[3.2rem] mb-3">🚀</div>
-//                             <h3 className="text-white text-[1.3rem] font-bold mb-2">
-//                                 Message Sent!
-//                             </h3>
-//                             <p className="text-gray text-[0.92rem]">
-//                                 We&apos;ll get back to you within 24 hours.
-//                             </p>
-//                             <p className="text-green text-[0.85rem] mt-3">
-//                                 🌳 Your tree will be planted when we confirm
-//                                 your project!
-//                             </p>
-//                         </div>
-//                     )}
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }
-
-/* ══════════════════════════════════════
    CTA STRIP
 ══════════════════════════════════════ */
 export function CtaStrip() {
@@ -644,55 +288,26 @@ export function CtaStrip() {
                     <p className="text-center text-[0.72rem] font-semibold tracking-[0.2em] text-gray uppercase mb-8">
                         Trusted by teams building with these platforms
                     </p>
-                    <div className="space-y-3 overflow-hidden">
-                        <div className="flex gap-3 animate-marqueeL w-max">
-                            {[...TRUSTED, ...TRUSTED].map((t, i) => (
-                                <div
-                                    key={i}
-                                    className="flex items-center gap-2.5 bg-bg3 border border-gray2 rounded-xl px-4 py-2.5 flex-shrink-0 hover:border-white/20 transition-colors duration-200 group cursor-default"
-                                >
-                                    <div
-                                        className="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-[0.85rem]"
-                                        style={{
-                                            background: `${t.color}18`,
-                                            color: t.color,
-                                            border: `1px solid ${t.color}25`,
-                                        }}
-                                    >
-                                        {t.symbol}
-                                    </div>
-                                    <span className="text-[0.78rem] font-semibold text-gray group-hover:text-white/80 transition-colors duration-200 whitespace-nowrap">
-                                        {t.name}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="flex gap-3 animate-marqueeR w-max">
-                            {[
-                                ...TRUSTED.slice().reverse(),
-                                ...TRUSTED.slice().reverse(),
-                            ].map((t, i) => (
-                                <div
-                                    key={i}
-                                    className="flex items-center gap-2.5 bg-bg3 border border-gray2 rounded-xl px-4 py-2.5 flex-shrink-0 hover:border-white/20 transition-colors duration-200 group cursor-default"
-                                >
-                                    <div
-                                        className="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-[0.85rem]"
-                                        style={{
-                                            background: `${t.color}18`,
-                                            color: t.color,
-                                            border: `1px solid ${t.color}25`,
-                                        }}
-                                    >
-                                        {t.symbol}
-                                    </div>
-                                    <span className="text-[0.78rem] font-semibold text-gray group-hover:text-white/80 transition-colors duration-200 whitespace-nowrap">
-                                        {t.name}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <div className="overflow-hidden w-full">
+  <div className="flex gap-3 animate-marquee" style={{ width: "max-content" }}>
+    {TRUSTED.map((t, i) => (
+      <div key={`a-${i}`} className="flex items-center gap-2.5 bg-bg3 border border-gray2 rounded-xl px-4 py-2.5 hover:border-white/20 transition-colors duration-200 group cursor-default flex-shrink-0">
+        <Image src={t.symbol} alt="" />
+        <span className="text-[0.78rem] font-semibold text-gray group-hover:text-white/80 transition-colors duration-200 whitespace-nowrap">
+          {t.name}
+        </span>
+      </div>
+    ))}
+    {TRUSTED.map((t, i) => (
+      <div key={`b-${i}`} className="flex items-center gap-2.5 bg-bg3 border border-gray2 rounded-xl px-4 py-2.5 hover:border-white/20 transition-colors duration-200 group cursor-default flex-shrink-0">
+        <Image src={t.symbol} alt="" />
+        <span className="text-[0.78rem] font-semibold text-gray group-hover:text-white/80 transition-colors duration-200 whitespace-nowrap">
+          {t.name}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
                 </div>
             </div>
             <div
