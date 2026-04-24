@@ -4,6 +4,8 @@ import Image, { StaticImageData } from "next/image";
 import { Label, SectionTitle, useStagger } from "../Sections";
 import coo from "../../images/COO.png";
 import ceo from "../../images/CEO.png";
+import cto from "../../images/CTO.png";
+import cfo from "../../images/CFO.png";
 
 // Deterministic SVG avatar using initials + unique abstract pattern
 function FounderPhoto({
@@ -175,7 +177,7 @@ const FOUNDERS = [
         name: "Nahiduzzaman Raz",
         role: "COO & Co-Founder",
         initials: "NR",
-        hue: 215,
+        hue: 130,
         image: coo as StaticImageData,
         linkedin: "https://linkedin.com/in/",
     },
@@ -183,14 +185,16 @@ const FOUNDERS = [
         name: "Abdullah Al Galib",
         role: "CTO & Co-Founder",
         initials: "AAG",
-        hue: 270,
+        hue: 130,
+        image: cto as StaticImageData,
         linkedin: "https://linkedin.com/in/",
     },
     {
         name: "Shahidul Islam Shanto",
         role: "CFO & Co-Founder",
         initials: "SIS",
-        hue: 35,
+        hue: 130,
+        image: cfo as StaticImageData,
         linkedin: "https://linkedin.com/in/",
     },
 ];

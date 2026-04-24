@@ -4,9 +4,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Label, SectionTitle, useFade } from '../Sections';
 import { toast } from 'sonner';
 
-/* ══════════════════════════════════════
-   CONTACT
-══════════════════════════════════════ */
 export function Contact() {
     useFade(".ctc-fade");
     const [form, setForm] = useState({
@@ -188,16 +185,11 @@ export function Contact() {
                             </div>
                         ))}
                     </div>
-                    <div className="ctc-fade mt-8 bg-green/5 border border-green/20 rounded-xl p-4 flex items-start gap-3">
+                    <div className="ctc-fade mt-8 bg-green/5 border border-green/20 rounded-xl p-4 flex items-center gap-3">
                         <span className="text-[1.5rem]">🌳</span>
                         <div>
                             <p className="text-green font-semibold text-[0.85rem] mb-1">
-                                Your confirmation plants a tree
-                            </p>
-                            <p className="text-gray text-[0.8rem] leading-[1.5]">
-                                When you confirm your project with us,
-                                Rafantolab plants 1 tree on your behalf. 450
-                                trees planted so far.
+                                Your confirmation plants 10 trees
                             </p>
                         </div>
                     </div>

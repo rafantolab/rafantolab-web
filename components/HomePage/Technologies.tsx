@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Label, SectionTitle, TCard, useFade, useStagger } from "../Sections";
+import { Label, SectionTitle, TCard, useFade } from "../Sections";
 import technologies1 from "../../images/technologies/technologies (1).svg";
 import technologies2 from "../../images/technologies/technologies (2).svg";
 import technologies3 from "../../images/technologies/technologies (3).svg";
@@ -47,7 +47,9 @@ const TECHS = [
 ];
 export function Technologies() {
     useFade(".tech-fade");
-    useStagger("#techGrid");
+    const topRow = [...TECHS, ...TECHS];
+    const bottomRow = [...TECHS.slice().reverse(), ...TECHS.slice().reverse()];
+
     return (
         <section
             id="technologies"
@@ -73,64 +75,45 @@ export function Technologies() {
                         for speed, scale, and longevity.
                     </p>
                 </div>
-                <div
-                    id="techGrid"
-                    className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4"
-                >
-                    {TECHS.map((t) => (
-                        <TCard
-                            key={t.name}
-                            className="tech-card group relative overflow-hidden rounded-[24px] border border-gray2 bg-[linear-gradient(180deg,#141414_0%,#101010_100%)] p-4 sm:p-5 cursor-default transition-all duration-300 hover:border-green/25 hover:-translate-y-1"
-                        >
-                            <div
-                                className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                style={{
-                                    background: `radial-gradient(circle at top right, ${t.color}20 0%, transparent 42%)`,
-                                }}
-                            />
-                            <div className="relative z-10 flex items-start justify-between mb-4">
-                                <span
-                                    className="inline-flex h-2.5 w-2.5 rounded-full"
-                                    style={{
-                                        backgroundColor: t.color,
-                                        boxShadow: `0 0 18px ${t.color}66`,
-                                    }}
-                                />
-                                <span className="text-[0.65rem] uppercase tracking-[0.14em] text-gray">
-                                    Stack
-                                </span>
-                            </div>
-                            <div
-                                className="relative z-10 rounded-[20px] h-[118px] flex items-center justify-center px-4 mb-4 overflow-hidden"
-                                style={{
-                                    background:
-                                        "linear-gradient(145deg, rgba(230,239,233,0.96) 0%, rgba(210,223,217,0.95) 100%)",
-                                    border: `1px solid ${t.color}30`,
-                                    boxShadow:
-                                        "inset 0 1px 0 rgba(255,255,255,0.72), inset 0 -10px 30px rgba(137,155,147,0.16)",
-                                }}
-                            >
-                                <div
-                                    className="absolute inset-0 opacity-80"
-                                    style={{
-                                        background: `radial-gradient(circle at 20% 15%, rgba(255,255,255,0.8), transparent 35%), radial-gradient(circle at 80% 100%, ${t.color}14, transparent 28%)`,
-                                    }}
-                                />
-                                <Image
-                                    src={t.symbol}
-                                    alt={`${t.name} logo`}
-                                    width={116}
-                                    height={48}
-                                    className="relative z-10 max-w-[116px] max-h-[48px] w-auto h-auto object-contain"
-                                />
-                            </div>
-                            <div className="relative z-10">
-                                <h3 className="text-white text-[0.95rem] font-semibold leading-tight">
-                                    {t.name}
-                                </h3>
-                            </div>
-                        </TCard>
-                    ))}
+                <div className="relative overflow-hidden">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-gradient-to-r from-bg2 via-bg2/85 to-transparent sm:w-28" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-gradient-to-l from-bg2 via-bg2/85 to-transparent sm:w-28" />
+                    <div className="space-y-6">
+                        <div className="flex w-max gap-6 animate-marqueeL">
+                            {topRow.map((t, index) => (
+                                <TCard
+                                    key={`${t.name}-top-${index}`}
+                                    className="tech-card group flex h-[88px] w-[160px] flex-shrink-0 items-center justify-center rounded-[24px] border-0 bg-transparent p-0 cursor-default transition-transform duration-300 hover:-translate-y-1"
+                                >
+                                    <Image
+                                        src={t.symbol}
+                                        alt={`${t.name} logo`}
+                                        width={124}
+                                        height={52}
+                                        title={t.name}
+                                        className="h-auto max-h-[52px] w-auto max-w-[124px] object-contain filter invert transition-all duration-300 group-hover:invert-0"
+                                    />
+                                </TCard>
+                            ))}
+                        </div>
+                        <div className="flex w-max gap-6 animate-marqueeR">
+                            {bottomRow.map((t, index) => (
+                                <TCard
+                                    key={`${t.name}-bottom-${index}`}
+                                    className="tech-card group flex h-[88px] w-[160px] flex-shrink-0 items-center justify-center rounded-[24px] border-0 bg-transparent p-0 cursor-default transition-transform duration-300 hover:-translate-y-1"
+                                >
+                                    <Image
+                                        src={t.symbol}
+                                        alt={`${t.name} logo`}
+                                        width={124}
+                                        height={52}
+                                        title={t.name}
+                                        className="h-auto max-h-[52px] w-auto max-w-[124px] object-contain filter invert transition-all duration-300 group-hover:invert-0"
+                                    />
+                                </TCard>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

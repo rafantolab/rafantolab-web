@@ -5,48 +5,52 @@ import { Label, SectionTitle, TCard, useFade, useStagger } from "../Sections";
 const PLANS = [
     {
         name: "Starter",
-        price: "$4,800",
-        period: "/ month · 3-mo min",
+        price: "$10,000",
+        period: "Launch your MVP fast and start getting real users",
         featured: false,
-        desc: "For early-stage startups validating their MVP and core product.",
+        desc: "Best for startups launching their first scalable product",
         feats: [
-            "2 dedicated engineers",
-            "UI/UX design included",
-            "Weekly sprint reviews",
-            "Basic cloud setup",
-            "14-day onboarding",
+            "Product design tailored to your brand",
+            "Full product development (web or app)",
+            "Weekly progress updates & demos",
+            "Core feature development (MVP scope)",
+            "Performance-optimized build",
+            "Basic cloud setup & deployment",
+            "Direct communication with team",
         ],
         cta: "Get Started",
     },
     {
         name: "Growth",
-        price: "$9,500",
-        period: "/ month · 3-mo min",
+        price: "$25,000",
+        period: "Scale confidently with a strong, conversion-driven product",
         featured: true,
-        desc: "For scaling teams that need to move fast and ship with confidence.",
+        desc: "For teams ready to scale, improve, and move faster",
         feats: [
-            "5 dedicated engineers",
-            "Senior product designer",
-            "Product manager",
-            "Advanced cloud arch",
-            "CI/CD + testing",
-            "Priority Slack support",
+            "Faster development cycles & priority delivery",
+            "Advanced UI/UX system (conversion-focused)",
+            "Product strategy & feature planning",
+            "Scalable backend architecture",
+            "Automated testing & smooth deployments",
+            "Dedicated product manager",
+            "24/7 priority support",
         ],
         cta: "Build Your Product",
     },
     {
         name: "Enterprise",
         price: "Custom",
-        period: "bespoke engagement",
+        period: "Build a market-leading product with a long-term tech partner",
         featured: false,
-        desc: "Large-scale platforms and dedicated teams embedded in your org.",
+        desc: "For companies building large-scale or long-term platforms",
         feats: [
-            "Full dedicated team",
-            "Custom SLA guarantees",
-            "On-site collaboration",
-            "IP ownership & white-label",
-            "24/7 infra support",
-            "Quarterly reviews",
+            "Fully dedicated cross-functional team",
+            "Deep product & business collaboration",
+            "Custom SLAs & performance guarantees",
+            "Enterprise-grade infrastructure",
+            "White-label ownership & full IP rights",
+            "On-demand scaling of team & resourcess",
+            "Strategic quarterly growth planning",
         ],
         cta: "Contact Sales",
     },
@@ -73,14 +77,14 @@ export function Pricing() {
                         roll="stage of growth"
                         center
                     />
-                    <p className="price-fade text-gray text-[1rem] max-w-[420px] leading-[1.75] mx-auto mt-2">
+                    <p className="price-fade text-gray text-[1rem] max-w-[520px] leading-[1.75] mx-auto mt-2">
                         No hidden fees. No surprises. Just clear, predictable
                         partnerships.
                     </p>
                 </div>
                 <div
                     id="priceGrid"
-                    className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[900px] mx-auto"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1300px] mx-auto"
                 >
                     {PLANS.map((p) => (
                         <TCard
@@ -109,13 +113,13 @@ export function Pricing() {
                                 ) : (
                                     <>
                                         <sup className="text-[1.2rem] align-top mt-1.5">
-                                            $
+                                            
                                         </sup>
-                                        {p.price.replace("$", "")}
+                                        {p.price}
                                     </>
                                 )}
                             </div>
-                            <div className="text-[0.82rem] text-gray mb-4">
+                            <div className="text-[0.82rem] text-green mt-4 mb-4">
                                 {p.period}
                             </div>
                             <p className="text-[0.85rem] text-gray leading-[1.6] mb-6">
