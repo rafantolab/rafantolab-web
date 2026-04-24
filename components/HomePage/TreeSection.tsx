@@ -86,13 +86,13 @@ export function TreeSection() {
                     />
                     <p className="text-gray text-[1rem] max-w-[520px] leading-[1.75] mx-auto mt-2">
                         Every time a client confirms to work with us, Rafantolab
-                        plants one tree because great products should leave
+                        plants 10 trees because great products should leave
                         the world better than we found it.
                     </p>
                 </div>
                 <div className="flex flex-col items-center mb-16">
                     <div className="relative">
-                        <div className="text-[7rem] font-display font-bold text-white leading-none flex items-end gap-3">
+                        <div className="text-[7rem] font-bold text-white leading-none flex items-end gap-3">
                             <span ref={cnt}>0</span>
                             <span className="text-green text-[5rem] mb-2">
                                 🌳
@@ -131,7 +131,7 @@ export function TreeSection() {
                         {
                             icon: "🤝",
                             title: "You Sign On",
-                            desc: "When you confirm working with Rafantolab, one tree is automatically pledged in your name.",
+                            desc: "When you confirm working with Rafantolab, 10 trees is automatically pledged in your name.",
                         },
                         {
                             icon: "🌱",

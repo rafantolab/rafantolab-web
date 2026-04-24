@@ -309,12 +309,8 @@ export default function Hero() {
                     >
                         <span className="text-[1rem]">🌳</span>
                         <span className="text-[0.75rem] font-semibold tracking-[0.08em] text-green">
-                            Every client confirmation = 10 tree planted{" "}
+                            Every client confirmation = 10 trees planted{" "}
                             <span className="text-[1rem]">🌳</span>
-                            {/* <span className="text-white font-bold">
-                                450 trees
-                            </span>{" "}
-                            and counting */}
                         </span>
                     </div>
                     {/* Available badge */}
@@ -335,9 +331,17 @@ export default function Hero() {
                             className="font-body text-center font-bold leading-[1.08] tracking-[-0.03em] text-white mb-4"
                             style={{ fontSize: "clamp(2.6rem,5.5vw,4.4rem)" }}
                         >
-                            From <span className="font-display">Idea</span> to
+                            From{" "}
+                            <span className="font-display italic">Idea</span> to
                             Impact <br />
-                            We Build Growth Driven Products
+                            We Build{" "}
+                            <span className="font-display italic">
+                                Growth
+                            </span>{" "}
+                            Driven{" "}
+                            <span className="font-display italic">
+                                Products
+                            </span>
                         </h1>
                     </div>
 
@@ -359,7 +363,7 @@ export default function Hero() {
                     >
                         {" "}
                         <p className="relative w-full text-center mb-5">
-                            <p className=" text-5xl text-center rolling-wrapper text-green font-display italic">
+                            <p className="text-5xl text-center rolling-wrapper text-green  italic">
                                 <p
                                     key={animKey}
                                     className="rolling-word font-bold"
@@ -385,63 +389,10 @@ export default function Hero() {
                             </svg>
                         </button>
                         {/* <button onClick={()=>go("#portfolio")} className="bg-transparent text-white/70 border border-gray2 rounded-full px-7 py-3.5 text-[0.97rem] font-medium cursor-pointer transition-all duration-200 hover:border-green hover:text-white">
-              View Our Work
-            </button> */}
+                              View Our Work
+                        </button> */}
                     </div>
-
-                    {/* Stats */}
-                    {/* <div ref={statsRef} style={{opacity:0}} className="flex gap-8 pt-8 border-t border-gray2 flex-wrap justify-center lg:justify-start">
-            <div className="text-center lg:text-left">
-              <div className="font-display text-[2rem] font-bold text-white"><span ref={cnt1}>0</span>+</div>
-              <div className="text-[0.78rem] text-gray tracking-[0.05em] font-medium uppercase">Products Shipped</div>
-            </div>
-            <div className="text-center lg:text-left">
-              <div className="font-display text-[2rem] font-bold text-white"><span ref={cnt2}>0</span>%</div>
-              <div className="text-[0.78rem] text-gray tracking-[0.05em] font-medium uppercase">Client Satisfaction</div>
-            </div>
-            <div className="text-center lg:text-left">
-              <div className="font-display text-[2rem] font-bold text-white">$<span ref={cnt3}>0</span>M+</div>
-              <div className="text-[0.78rem] text-gray tracking-[0.05em] font-medium uppercase">Client Revenue</div>
-            </div>
-            <div className="text-center lg:text-left">
-              <div className="font-display text-[2rem] font-bold text-green flex items-center gap-1"><span ref={cnt4}>0</span><span className="text-[1.4rem]">🌳</span></div>
-              <div className="text-[0.78rem] text-gray tracking-[0.05em] font-medium uppercase">Trees Planted</div>
-            </div>
-          </div> */}
                 </div>
-
-                {/* ────── RIGHT: Logo Orbit ────── */}
-                {/* <div className="hidden lg:flex items-center justify-center">
-          <div className="relative w-[380px] h-[380px] flex items-center justify-center">
-            <svg className="absolute inset-0 w-full h-full animate-spinSlow" viewBox="0 0 380 380" fill="none">
-              <circle ref={outerRing} cx="190" cy="190" r="120" stroke="rgba(82,243,23,0.15)" strokeWidth="1" strokeDasharray="6 10"/>
-              <circle ref={dotRef} cx="190" cy="70" r="5" fill="#52f317" style={{filter:"drop-shadow(0 0 6px #52f317)"}}/>
-            </svg>
-            <svg className="absolute inset-0 w-full h-full animate-spinSlowR" viewBox="0 0 380 380" fill="none">
-              <circle ref={innerRing} cx="190" cy="190" r="80" stroke="rgba(82,243,23,0.10)" strokeWidth="1" strokeDasharray="3 14"/>
-            </svg>
-            <div className="absolute w-[420px] h-[420px] rounded-full animate-glowPulse pointer-events-none"
-              style={{background:"radial-gradient(circle,rgba(82,243,23,0.12) 0%,transparent 70%)"}}/>
-            <svg ref={logoRef} width="460" height="460" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg"
-              className="relative z-10 cursor-pointer select-none"
-              style={{filter:"drop-shadow(0 0 24px rgba(82,243,23,0.4))", transformStyle:"preserve-3d"}}>
-              <defs>
-                <linearGradient id="heroLogoGrad" x1="59.31" y1="148" x2="508.19" y2="394" gradientUnits="userSpaceOnUse">
-                  <stop offset="0"   stopColor="#198405"/><stop offset=".37" stopColor="#229608"/>
-                  <stop offset=".8"  stopColor="#3fce11"/><stop offset="1"   stopColor="#52f317"/>
-                </linearGradient>
-                <linearGradient id="heroLogoGradW" x1="59.31" y1="148" x2="508.19" y2="394" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="rgba(255,255,255,0.15)"/><stop offset="1" stopColor="rgba(255,255,255,0.05)"/>
-                </linearGradient>
-              </defs>
-              <path fill="url(#heroLogoGrad)" d="M256,102.1c84.9,0,154,69.11,154,154s-69.11,154-154,154-154-69.11-154-154,69.11-154,154-154M256,0C114.57,0,0,114.68,0,256s114.68,256,256,256,256-114.68,256-256S397.32,0,256,0h0Z"/>
-              <circle cx="256" cy="256" r="100" fill="url(#heroLogoGradW)" opacity=".4"/>
-            </svg>
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className="font-display font-bold text-white/90 select-none" style={{fontSize:"3.2rem",textShadow:"0 0 30px rgba(82,243,23,0.5)"}}></span>
-            </div>
-          </div>
-        </div> */}
             </div>
 
             <div
