@@ -91,7 +91,7 @@ export function Contact() {
             };
 
             const res = await fetch(
-                "https://rafantolab-backend.onrender.com/api/v1/contact",
+                "https://rafantolab-backend.vercel.app/api/v1/contact",
                 {
                     method: "POST",
                     headers: {
