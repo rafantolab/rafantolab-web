@@ -304,9 +304,9 @@ export function Contact() {
                                             Select a plan…
                                         </option>
                                         {[
-                                            "Starter — $4,800/mo",
-                                            "Growth — $9,500/mo",
-                                            "Enterprise — Custom",
+                                            "Starter - $10,000/mo",
+                                            "Growth - $25,000/mo",
+                                            "Enterprise - Custom",
                                             "One-time Project",
                                             "Not Sure Yet",
                                         ].map((o) => (
