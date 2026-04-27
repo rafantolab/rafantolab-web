@@ -131,7 +131,7 @@ export function SectionTitle({
     return (
         <h2
             ref={ref}
-            className={`font-body font-bold leading-[1.15] text-white mb-4 ${center ? "text-center" : ""}`}
+            className={`font-body font-bold leading-loose text-white mb-4 ${center ? "text-center" : ""}`}
             style={{ fontSize: "clamp(2rem,3.4vw,2.75rem)" }}
         >
             {pre}{" "}

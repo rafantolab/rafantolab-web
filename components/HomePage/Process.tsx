@@ -90,13 +90,13 @@ export function Process() {
                     </p>
                 </div>
                 <div className="proc-steps relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
-                    <div className="absolute top-[35px] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-green/20 to-transparent hidden lg:block" />
+                    <div className="absolute top-[38px] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-green/20 to-transparent hidden lg:block" />
                     {STEPS.map((s) => (
                         <div
                             key={s.n}
                             className="gs-step text-center px-6 pb-8"
                         >
-                            <div className="step-num w-[70px] h-[70px] rounded-full bg-bg3 border border-green/20 flex items-center justify-center font-display text-[1.35rem] font-bold text-green mx-auto mb-5 relative z-10 shadow-[0_0_25px_rgba(82,243,23,0.08)]">
+                            <div className="step-num w-[70px] h-[70px] rounded-full bg-bg3 border border-green/20 flex items-center justify-center font-display text-[1.75rem] font-bold text-green mx-auto mb-5 relative z-10 shadow-[0_0_25px_rgba(82,243,23,0.08)]">
                                 {s.n}
                             </div>
                             <h4 className="font-bold text-[0.97rem] text-white mb-2">

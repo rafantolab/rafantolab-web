@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import logo2 from "../../public/logo2.svg";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Facebook02Icon, InstagramIcon, Linkedin02Icon, NewTwitterIcon, YoutubeIcon } from "@hugeicons/core-free-icons";
 
 const topColumns = [
     {
@@ -83,10 +85,11 @@ const bottomColumns = [
 ];
 
 const socials = [
-    { label: "X", href: "#" },
-    { label: "in", href: "#" },
-    { label: "gh", href: "#" },
-    { label: "be", href: "#" },
+    { icon: Facebook02Icon, href: "https://www.facebook.com/rafantolab" },
+    { icon: InstagramIcon, href: "https://www.instagram.com/rafantolab" },
+    { icon: Linkedin02Icon, href: "https://www.linkedin.com/company/rafantolab" },
+    { icon: NewTwitterIcon, href: "https://www.x.com/rafantolab" },
+    { icon: YoutubeIcon, href: "https://www.youtube.com/@rafantolab" },
 ];
 
 export function Footer() {
@@ -126,40 +129,6 @@ export function Footer() {
                                     })
                                 }
                             >
-                                {/* <svg
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 512 512"
-                                    fill="none"
-                                >
-                                    <defs>
-                                        <linearGradient
-                                            id="footerLogoGrad"
-                                            x1="0"
-                                            y1="512"
-                                            x2="512"
-                                            y2="0"
-                                            gradientUnits="userSpaceOnUse"
-                                        >
-                                            <stop
-                                                offset="0"
-                                                stopColor="#198405"
-                                            />
-                                            <stop
-                                                offset="1"
-                                                stopColor="#52f317"
-                                            />
-                                        </linearGradient>
-                                    </defs>
-                                    <path
-                                        fill="url(#footerLogoGrad)"
-                                        d="M256,102.1c84.9,0,154,69.11,154,154s-69.11,154-154,154-154-69.11-154-154,69.11-154,154-154M256,0C114.57,0,0,114.68,0,256s114.68,256,256,256,256-114.68,256-256S397.32,0,256,0h0Z"
-                                    />
-                                </svg>
-                                <span className="text-[1.15rem] font-bold text-white">
-                                    Rafanto
-                                    <span className="text-green">lab</span>
-                                </span> */}
                                 <Image
                                     src={logo2}
                                     width={350}
@@ -167,21 +136,18 @@ export function Footer() {
                                 />
                             </button>
 
-                            {/* <p className="mt-3 max-w-[320px] text-[0.92rem] leading-[1.75] text-white/62">
-                                Strategy, design, and engineering for ambitious
-                                teams shipping standout web products.
-                            </p> */}
-
                             <div className="mt-7 flex flex-wrap gap-3">
-                                {socials.map((item) => (
+                                {socials.map((item, index) => (
                                     <a
-                                        key={item.label}
+                                        key={index}
                                         href={item.href}
+                                        target="_blank"
                                         className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 text-[0.82rem] font-semibold uppercase text-white/75 no-underline transition-all duration-200 hover:border-green hover:bg-white/10 hover:text-white"
                                     >
-                                        {item.label}
+                                         <HugeiconsIcon icon={item.icon} />
                                     </a>
                                 ))}
+                               
                             </div>
                         </div>
 
